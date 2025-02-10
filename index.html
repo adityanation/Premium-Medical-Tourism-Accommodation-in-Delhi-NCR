@@ -277,58 +277,70 @@
                     </div>
                 </div>
             </div>
-            
-        </section>
-<section id="contact" class="py-20 px-4 bg-[#FF6B6B]">
-            <div class="container mx-auto max-w-md">
-                <div class="bg-white p-8 neu-border rounded-lg">
-                    <h2 class="text-3xl font-bold text-center mb-6">Get Your Personalized Plan</h2>
-                    <form onsubmit="handleSubmit(event)" class="space-y-6"> -->
-<section id="contact" class="py-20 px-4 bg-[#FF6B6B]">
-            <div class="container mx-auto max-w-md">
-                <div class="bg-white p-8 neu-border rounded-lg">
-                    <h2 class="text-3xl font-bold text-center mb-6">Get Your Personalized Plan</h2>
-                    <form onsubmit="handleSubmit(event)" class="space-y-6"> -->
-<!--                         <section id="contact" class="py-20 px-4 bg-[#FF6B6B]">
-                            <div class="container mx-auto max-w-md">
-                                <div class="bg-white p-6 md:p-8 neu-border rounded-lg">
-                                    <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">Get Your Personalized Plan</h2>
-                                    <form onsubmit="handleSubmit(event)" class="space-y-4 md:space-y-6">
-                        <div>
-                            <label class="block font-bold mb-2">Full Name</label>
-                            <input type="text" required class="w-full p-3 neu-border">
-                        </div>
-                        <div>
-                            <label class="block font-bold mb-2">Email</label>
-                            <input type="email" required class="w-full p-3 neu-border">
-                        </div>
-                        <div>
-                            <label class="block font-bold mb-2">Phone</label>
-                            <input type="tel" required class="w-full p-3 neu-border">
-                        </div>
-                        <div>
-                            <label class="block font-bold mb-2">Expected Stay Duration</label>
-                            <input type="text" required class="w-full p-3 neu-border">
-                        </div>
-                        <div>
-                            <label class="block font-bold mb-2">Your Country</label>
-                            <input type="text" required class="w-full p-3 neu-border">
-                        </div>
-                        <div>
-                            <label class="block font-bold mb-2">Your Whatsapp No </label>
-                            <input type="text" required class="w-full p-3 neu-border">
-                        </div>
-                        <a href="https://wa.me/+917678529793?text=Hi%2C%20I'm%20interested%20in%20the%20facilities%20provided%20by%20your%20company.%20Can%20we%20discuss%20more%3F" 
-                   target="_blank" 
-                   class="w-full block text-center bg-[#4ECDC4] text-white py-4 neu-border neu-button font-bold" >
-                   <span>Chat with us Now!     </span>
-                    
-                    <i class="bi bi-whatsapp text-2xl"></i>
-                </a>
-                    </form>
+            <section id="contact" class="py-20 px-4 bg-[#FF6B6B]">
+    <div class="container mx-auto max-w-md">
+        <div class="bg-white p-6 md:p-8 neu-border rounded-lg">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">
+                Get Your Personalized Plan
+            </h2>
+            <form id="contactForm" class="space-y-4 md:space-y-6">
+                <div>
+                    <label class="block font-bold mb-2">Full Name</label>
+                    <input type="text" id="name" required class="w-full p-3 neu-border">
                 </div>
-            </div>
-        </section>
+                <div>
+                    <label class="block font-bold mb-2">Email</label>
+                    <input type="email" id="email" required class="w-full p-3 neu-border">
+                </div>
+                <div>
+                    <label class="block font-bold mb-2">Phone</label>
+                    <input type="tel" id="phone" required class="w-full p-3 neu-border">
+                </div>
+                <div>
+                    <label class="block font-bold mb-2">Expected Stay Duration</label>
+                    <input type="text" id="duration" required class="w-full p-3 neu-border">
+                </div>
+                <div>
+                    <label class="block font-bold mb-2">Your Country</label>
+                    <input type="text" id="country" required class="w-full p-3 neu-border">
+                </div>
+                <div>
+                    <label class="block font-bold mb-2">Your WhatsApp No</label>
+                    <input type="text" id="whatsapp" required class="w-full p-3 neu-border">
+                </div>
+                <button type="button" onclick="sendWhatsApp()" 
+                        class="w-full block text-center bg-[#4ECDC4] text-white py-4 neu-border neu-button font-bold">
+                    <span>Chat with us Now!</span>
+                    <i class="bi bi-whatsapp text-2xl"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+function sendWhatsApp() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let duration = document.getElementById("duration").value;
+    let country = document.getElementById("country").value;
+    let whatsapp = document.getElementById("whatsapp").value;
+
+    let message = `Hi, I'm interested in your services.%0A%0A
+    *Name:* ${name}%0A
+    *Email:* ${email}%0A
+    *Phone:* ${phone}%0A
+    *Expected Stay Duration:* ${duration}%0A
+    *Country:* ${country}%0A
+    *WhatsApp:* ${whatsapp}%0A
+    Can we discuss more?`;
+
+    let whatsappURL = `https://wa.me/+917678529793?text=${message}`;
+    window.open(whatsappURL, "_blank");
+}
+</script>
+
         <!-- Contact Form Section -->
         <!-- <section id="contact" class="py-20 px-4 bg-[#FF6B6B]">
             <div class="container mx-auto max-w-md">
