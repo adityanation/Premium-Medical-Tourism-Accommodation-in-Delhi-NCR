@@ -434,3 +434,16 @@ function bookViaWhatsApp() {
     Book Now
 </button>
 
+<button onclick="bookViaWhatsApp()">Book Now</button>
+
+<script>
+function bookViaWhatsApp() {
+    var phoneNumber = "7678529793"; // Replace with your actual WhatsApp number
+    var message = "I want to book a service."; // Custom message
+    var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+    
+    window.open(url, "_blank"); // Opens WhatsApp in a new tab
+}
+</script>
+
+
