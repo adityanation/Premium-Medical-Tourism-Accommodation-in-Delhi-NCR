@@ -3,416 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-<!--         Anmol Facilities -  -->
-        Premium Medical Tourism Accommodation
-    </title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .neu-border {
-            border: 3px solid #000;
-            box-shadow: 4px 4px 0 #000;
-        }
-        .neu-button {
-            transition: all 0.2s ease;
-        }
-        .neu-button:active {
-            transform: translate(4px, 4px);
-            box-shadow: 0px 0px 0 #000;
-        }
-        .scroll-container {
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .scroll-content {
-            display: inline-block;
-            animation: scroll 13s linear infinite;
-        }
-        .scroll-content:hover {
-            animation-play-state: paused;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        .custom-gradient {
-            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
-        }
-    </style> -->
-
+    <title>Hotel Booking</title>
     <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .neu-border {
-            border: 3px solid #000;
-            box-shadow: 4px 4px 0 #000;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
         }
-        .neu-button {
-            transition: all 0.2s ease;
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
         }
-        .neu-button:active {
-            transform: translate(4px, 4px);
-            box-shadow: 0px 0px 0 #000;
+        h1 {
+            color: #333;
         }
-        .scroll-container {
-            overflow: hidden;
-            white-space: nowrap;
+        .booking-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: auto;
         }
-        .scroll-content {
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .whatsapp-button {
             display: inline-block;
-            animation: scroll 13s linear infinite;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 16px;
         }
-        .scroll-content:hover {
-            animation-play-state: paused;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        .custom-gradient {
-            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
-        }
-        #hero {
-            padding-top: var(--navbar-height);
-        }
-    
-        #navbar {
-            --navbar-height: 0px; /* Default value */
+        .whatsapp-button:hover {
+            background-color: #1ebe57;
         }
     </style>
 </head>
-<body class="bg-[#f0f2f5]">
+<body>
 
-    <!-- <nav class=" fixed w-full bg-[#4ECDC4] p-4 neu-border z-50">
-        <div class="container mx-auto flex flex-wrap items-center justify-between">
-            <div class="text-2xl font-bold">Anmol Facilities</div>
-            <div class="space-y-2 mt-4 w-full sm:mt-0 sm:w-auto sm:space-y-0 sm:flex sm:space-x-4">
-                <button onclick="scrollToSection('facilities')" 
-                        class="w-full sm:w-auto bg-[#FF6B6B] text-white px-4 py-2 neu-border neu-button">
-                    Facilities
-                </button>
-                <button onclick="scrollToSection('properties')" 
-                        class="w-full sm:w-auto bg-[#FF6B6B] text-white px-4 py-2 neu-border neu-button">
-                    Properties
-                </button>
-                <button onclick="scrollToSection('contact')" 
-                        class="w-full sm:w-auto bg-[#FF6B6B] text-white px-4 py-2 neu-border neu-button">
-                    Book
-                </button>
-            </div>
+    <div class="container">
+        <h1>Book Your Stay</h1>
+        <div class="booking-form">
+            <form action="submit_booking.php" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="checkin">Check-in Date:</label>
+                <input type="date" id="checkin" name="checkin" required>
+
+                <label for="checkout">Check-out Date:</label>
+                <input type="date" id="checkout" name="checkout" required>
+
+                <label for="room">Room Type:</label>
+                <select id="room" name="room">
+                    <option value="single">Single Room</option>
+                    <option value="double">Double Room</option>
+                    <option value="suite">Suite</option>
+                </select>
+
+                <button type="submit">Book Now</button>
+            </form>
         </div>
-    </nav> -->
-    
-    <nav id="navbar" class="fixed w-full bg-[#4ECDC4] p-4 neu-border z-50">
-        <div class="container mx-auto flex flex-wrap items-center justify-between">
-            <div class="text-2xl font-bold">
-<!--                 Anmol -->
-                Facilities
-            </div>
-            <div class="space-y-2 mt-4 w-full sm:mt-0 sm:w-auto sm:space-y-0 sm:flex sm:space-x-4">
-                <button onclick="scrollToSection('facilities')" 
-                        class="w-full sm:w-auto bg-[#FF6B6B] text-white px-4 py-2 neu-border neu-button">
-                    Facilities
-                </button>
-                <button onclick="scrollToSection('properties')" 
-                        class="w-full sm:w-auto bg-[#FF6B6B] text-white px-4 py-2 neu-border neu-button">
-                    Properties
-                </button>
-                <button onclick="scrollToSection('contact')" 
-                        class="w-full sm:w-auto bg-[#FF6B6B] text-white px-4 py-2 neu-border neu-button">
-                    Book
-                </button>
-            </div>
-        </div>
-    </nav>
-    <!-- <nav class="fixed w-full bg-[#4ECDC4] p-4 neu-border z-50">
-        <div class="container mx-auto flex flex-wrap items-center justify-between">
-            <div class="text-2xl font-bold">Anmol Facilities</div>
-            <div class="space-y-2 mt-4 w-full sm:mt-0 sm:w-auto sm:space-y-0 sm:flex sm:space-x-4 hidden sm:flex">
-                <button onclick="scrollToSection('facilities')" 
-                        class="w-full sm:w-auto bg-[#FF6B6B] text-white px-4 py-2 neu-border neu-button">
-                    Facilities
-                </button>
-                <button onclick="scrollToSection('properties')" 
-                        class="w-full sm:w-auto bg-[#FF6B6B] text-white px-4 py-2 neu-border neu-button">
-                    Properties
-                </button>
-                <button onclick="scrollToSection('contact')" 
-                        class="w-full sm:w-auto bg-[#FF6B6B] text-white px-4 py-2 neu-border neu-button">
-                    Book
-                </button>
-            </div>
-        </div>
-    </nav> -->
-    
-    <main class="pt-24">
-        <!-- Hero Section -->
-        <!-- <section class="py-20 px-4 custom-gradient">
-            <div class="container mx-auto max-w-4xl text-center text-white">
-                <h1 class="text-5xl font-bold mb-6">Premium Medical Tourism Accommodation in Delhi NCR</h1>
-                <p class="text-xl mb-8">World-class facilities at affordable prices with 100% customer satisfaction</p>
-                <div class="bg-white p-6 rounded-lg neu-border inline-block">
-                    <div class="text-black">
-                        <h3 class="font-bold text-2xl mb-2">Happy Customers Served So Far</h3>
-                        <div id="counter" class="text-4xl font-bold text-[#FF6B6B]">0</div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
 
-        <section id="hero" class="py-20 px-4 custom-gradient">
-            <div class="container mx-auto max-w-4xl text-center text-white">
-                <h1 class="text-3xl md:text-5xl font-bold mb-6">Premium Medical Tourism Accommodation in Delhi NCR</h1>
-                <p class="text-lg md:text-xl mb-8">World-class facilities at affordable prices with 100% customer satisfaction</p>
-                <div class="bg-white p-6 rounded-lg neu-border inline-block">
-                    <div class="text-black">
-                        <h3 class="font-bold text-xl md:text-2xl mb-2">Happy Customers Served So Far</h3>
-                        <div id="counter" class="text-2xl md:text-4xl font-bold text-[#FF6B6B]">0</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Facilities Section -->
-        <!-- <section id="facilities" class="py-20 px-4 bg-[#FF6B6B]">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center text-white mb-12">Our Premium Facilities</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white p-6 neu-border rounded-lg">
-                        <i class="bi bi-cup-hot text-4xl text-[#4ECDC4]"></i>
-                        <h3 class="text-xl font-bold mt-4">Delicious Food</h3>
-                        <p>Healthy and tasty meals prepared fresh daily</p>
-                    </div>
-                    <div class="bg-white p-6 neu-border rounded-lg">
-                        <i class="bi bi-car-front text-4xl text-[#4ECDC4]"></i>
-                        <h3 class="text-xl font-bold mt-4">Fast Transportation</h3>
-                        <p>24/7 transportation service available</p>
-                    </div>
-                    <div class="bg-white p-6 neu-border rounded-lg">
-                        <i class="bi bi-house-heart text-4xl text-[#4ECDC4]"></i>
-                        <h3 class="text-xl font-bold mt-4">Comfortable Stay</h3>
-                        <p>Premium furnished accommodations</p>
-                    </div>
-                    <div class="bg-white p-6 neu-border rounded-lg">
-                        <i class="bi bi-headset text-4xl text-[#4ECDC4]"></i>
-                        <h3 class="text-xl font-bold mt-4">24/7 Assistance</h3>
-                        <p>Personal assistance always available</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <section id="facilities" class="py-20 px-4 bg-[#FF6B6B]">
-            <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">Our Premium Facilities</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white p-6 neu-border rounded-lg">
-                        <i class="bi bi-cup-hot text-3xl md:text-4xl text-[#4ECDC4]"></i>
-                        <h3 class="text-lg md:text-xl font-bold mt-4">Delicious Food</h3>
-                        <p>Healthy and tasty meals prepared fresh daily</p>
-                    </div>
-                    <div class="bg-white p-6 neu-border rounded-lg">
-                        <i class="bi bi-car-front text-3xl md:text-4xl text-[#4ECDC4]"></i>
-                        <h3 class="text-lg md:text-xl font-bold mt-4">Fast Transportation</h3>
-                        <p>24/7 transportation service available</p>
-                    </div>
-                    <div class="bg-white p-6 neu-border rounded-lg">
-                        <i class="bi bi-house-heart text-3xl md:text-4xl text-[#4ECDC4]"></i>
-                        <h3 class="text-lg md:text-xl font-bold mt-4">Comfortable Stay</h3>
-                        <p>Premium furnished accommodations</p>
-                    </div>
-                    <div class="bg-white p-6 neu-border rounded-lg">
-                        <i class="bi bi-headset text-3xl md:text-4xl text-[#4ECDC4]"></i>
-                        <h3 class="text-lg md:text-xl font-bold mt-4">24/7 Assistance</h3>
-                        <p>Personal assistance always available</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Properties Section -->
-        <!-- <section id="properties" class="py-20 px-4 bg-[#4ECDC4]">
-            <h2 class="text-4xl font-bold text-center text-white mb-12">Our Properties</h2>
-            <div class="scroll-container">
-                <div class="scroll-content flex gap-4">
-                    <div class="w-72 h-72 bg-gray-200 neu-border rounded-lg flex-shrink-0">
-                        <img src="./image1.png" alt="Property 1" class="w-full h-full object-cover">
-                    </div> -->
-                    <section id="properties" class="py-20 px-4 bg-[#4ECDC4]">
-                        <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">Our Properties</h2>
-                        <div class="scroll-container">
-                            <div class="scroll-content flex gap-4">
-                                <div class="w-56 md:w-72 h-56 md:h-72 bg-gray-200 neu-border rounded-lg flex-shrink-0">
-                                    <img src="./image1.png" alt="Property 1" class="w-full h-full object-cover">
-                                </div>
-                    <div class="w-72 h-72 bg-gray-200 neu-border rounded-lg flex-shrink-0">
-                        <img src="./image2.png" alt="Property 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-72 h-72 bg-gray-200 neu-border rounded-lg flex-shrink-0">
-                        <img src="./image3.png" alt="Property 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-72 h-72 bg-gray-200 neu-border rounded-lg flex-shrink-0">
-                        <img src="./image4.png" alt="Property 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-72 h-72 bg-gray-200 neu-border rounded-lg flex-shrink-0">
-                        <img src="./image5.png" alt="Property 2" class="w-full h-full object-cover">
-                    </div>
+        <!-- WhatsApp Booking Button -->
+        <a href="https://wa.me/yourphonenumber" class="whatsapp-button" >
+            📲 Book via WhatsApp
+        </a>
+    </div>
 
-                    
-
-                    <div class="w-72 h-72 bg-gray-200 neu-border rounded-lg flex-shrink-0">
-                        <img src="./image1.png" alt="Property 1" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-72 h-72 bg-gray-200 neu-border rounded-lg flex-shrink-0">
-                        <img src="./image2.png" alt="Property 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-72 h-72 bg-gray-200 neu-border rounded-lg flex-shrink-0">
-                        <img src="./image3.png" alt="Property 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-72 h-72 bg-gray-200 neu-border rounded-lg flex-shrink-0">
-                        <img src="./image4.png" alt="Property 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-72 h-72 bg-gray-200 neu-border rounded-lg flex-shrink-0">
-                        <img src="./image5.png" alt="Property 2" class="w-full h-full object-cover">
-                    </div>
-                </div>
-            </div>
-            
-        </section>
-
-        <!-- Contact Form Section -->
-        <!-- <section id="contact" class="py-20 px-4 bg-[#FF6B6B]">
-            <div class="container mx-auto max-w-md">
-                <div class="bg-white p-8 neu-border rounded-lg">
-                    <h2 class="text-3xl font-bold text-center mb-6">Get Your Personalized Plan</h2>
-                    <form onsubmit="handleSubmit(event)" class="space-y-6"> -->
-<!--                         <section id="contact" class="py-20 px-4 bg-[#FF6B6B]">
-                            <div class="container mx-auto max-w-md">
-                                <div class="bg-white p-6 md:p-8 neu-border rounded-lg">
-                                    <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">Get Your Personalized Plan</h2>
-                                    <form onsubmit="handleSubmit(event)" class="space-y-4 md:space-y-6">
-                        <div>
-                            <label class="block font-bold mb-2">Full Name</label>
-                            <input type="text" required class="w-full p-3 neu-border">
-                        </div>
-                        <div>
-                            <label class="block font-bold mb-2">Email</label>
-                            <input type="email" required class="w-full p-3 neu-border">
-                        </div>
-                        <div>
-                            <label class="block font-bold mb-2">Phone</label>
-                            <input type="tel" required class="w-full p-3 neu-border">
-                        </div>
-                        <div>
-                            <label class="block font-bold mb-2">Expected Stay Duration</label>
-                            <input type="text" required class="w-full p-3 neu-border">
-                        </div>
-                        <div>
-                            <label class="block font-bold mb-2">Your Country</label>
-                            <input type="text" required class="w-full p-3 neu-border">
-                        </div>
-                        <div>
-                            <label class="block font-bold mb-2">Your Whatsapp No </label>
-                            <input type="text" required class="w-full p-3 neu-border">
-                        </div>
-                        <a href="https://wa.me/+919971110422?text=Hi%2C%20I'm%20interested%20in%20the%20facilities%20provided%20by%20your%20company.%20Can%20we%20discuss%20more%3F" 
-                   target="_blank" 
-                   class="w-full block text-center bg-[#4ECDC4] text-white py-4 neu-border neu-button font-bold" >
-                   <span>Chat with us Now!     </span>
-                    
-                    <i class="bi bi-whatsapp text-2xl"></i>
-                </a>
-                    </form>
-                </div>
-            </div>
-        </section> -->
-    </main>
-
-    <script>
-        // Counter animation
-        let count = 0;
-        const target = 1007;
-        const counter = document.getElementById('counter');
-        const speed = 200;
-
-        const updateCounter = () => {
-            const increment = target / speed;
-            if(count < target) {
-                count += increment;
-                counter.innerText = Math.floor(count);
-                requestAnimationFrame(updateCounter);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        updateCounter();
-
-        // Smooth scroll
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        window.addEventListener('load', () => {
-            const navbar = document.getElementById('navbar');
-            const hero = document.getElementById('hero');
-            const navbarHeight = navbar.offsetHeight;
-            document.documentElement.style.setProperty('--navbar-height', ${navbarHeight}px);
-        });
-    
-        window.addEventListener('resize', () => {
-            const navbar = document.getElementById('navbar');
-            const navbarHeight = navbar.offsetHeight;
-            document.documentElement.style.setProperty('--navbar-height', ${navbarHeight}px);
-        });
-
-        // Form submission
-
-        function handleSubmit(event) {
-            event.preventDefault(); // Prevent the default form submission
-            const url = "https://wa.me/+911234567890";
-            window.location.href = url; // Redirect to WhatsApp
-        }
-        
-       
-        
-
-        // Image upload
-        function handleImageUpload(event) {
-            const files = event.target.files;
-            // Here you would typically handle the file upload
-            alert(${files.length} image(s) selected for upload);
-        }
-    </script>
-   
-        
-   
-    <footer class="bg-[#4ECDC4] py-10">
-        <div class="container mx-auto text-center text-white">
-            <div class="mb-6">
-                <h3 class="text-2xl font-bold">Anmol Facilities</h3>
-                <p class="mt-2 text-sm">Premium Medical Tourism Accommodation in Delhi NCR</p>
-            </div>
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="https://www.facebook.com" target="_blank" class="text-white hover:text-gray-300" aria-label="Facebook">
-                    <i class="bi bi-facebook text-2xl"></i>
-                </a>
-                <a href="https://www.twitter.com" target="_blank" class="text-white hover:text-gray-300" aria-label="Twitter">
-                    <i class="bi bi-twitter text-2xl"></i>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" class="text-white hover:text-gray-300" aria-label="Instagram">
-                    <i class="bi bi-instagram text-2xl"></i>
-                </a>
-                <a href="https://www.linkedin.com" target="_blank" class="text-white hover:text-gray-300" aria-label="LinkedIn">
-                    <i class="bi bi-linkedin text-2xl"></i>
-                </a>
-            </div>
-            <div class="text-sm">
-                <p>&copy; 2024 Anmol Facilities. All rights reserved.</p>
-                <p class="mt-2">Designed and Developed by <br>
-                    <strong>Shobhit Ranjan & Aditya Sinha</strong>.</p>
-            </div>
-        </div>
-    </footer>
-    
 </body>
-</html
+</html>
+<a href="booking.html" class="btn">Book Now</a>
+<a href="index.html">← Back to Home</a>
+
