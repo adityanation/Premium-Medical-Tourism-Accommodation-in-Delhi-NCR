@@ -372,7 +372,21 @@
             const url = "https://wa.me/+911234567890";
             window.location.href = url; // Redirect to WhatsApp
         }
-        
+        // Function to send booking details via WhatsApp
+function bookViaWhatsApp() {
+    // Replace with your business WhatsApp number (including country code, without +)
+    const phoneNumber = "1234567890"; 
+    
+    // Customize the booking message
+    const message = encodeURIComponent("Hello, I would like to make a booking. Can you assist me?");
+    
+    // Create WhatsApp link
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappURL, "_blank");
+}
+
        
         
 
